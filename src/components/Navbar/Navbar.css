@@ -1,0 +1,134 @@
+:root {
+  --navbar-height: 80px;
+  --nav-menu-items-height: 80px;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  height: var(--navbar-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: var(--navbar-height);
+  max-width: 1500px;
+  margin: 0 20px;
+}
+
+svg {
+  display: block;
+}
+
+.navbar-logo {
+  color: #fff;
+  justify-self: start;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-logo .icon {
+  font-size: 40px;
+  margin-left: 12px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  row-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 54vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  height: var(--navbar-height);
+}
+.nav-item.menu-bar-only {
+  display: none;
+}
+
+.nav-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  height: 100%;
+  box-sizing: border-box;
+  transition: .4s ease;
+}
+.nav-links:hover {
+  border-bottom: 4px solid #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+.menu-icon {
+  color: #fff;
+  font-size: 27px;
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  ul.nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    height: calc(100vh - var(--navbar-height));
+    top: var(--navbar-height);
+    left: -100%;
+    transition: all .5s ease;
+  }
+  ul.nav-menu.active {
+    left: 0;
+    background-color: #242222;
+    opacity: 1;
+    transition: all .5s ease;
+  }
+
+  .nav-item {
+    height: var(--nav-menu-items-height);
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+
+  .nav-links:hover {
+    border: none;
+    background-color: #575757;
+    /* color: #242424; */
+  }
+
+  .nav-item.menu-bar-only {
+    display: block;
+    position: relative;
+  }
+}
