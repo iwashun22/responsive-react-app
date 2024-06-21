@@ -1,15 +1,16 @@
-import  { useState, useCallback, ReactElement } from 'react';
+import  { useState, useCallback, ReactElement, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { LuAtom } from 'react-icons/lu';
 import { FaXmark } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import PAGES from '../pages/pages';
 import Button from '../Button';
 
 import './Navbar.css';
 
 function Navbar(): ReactElement {
   const [menuClosed, setMenu] = useState<boolean>(true);
-  const [displayButton, setDisplayButton] = useState<boolean>(!(window.innerWidth <= 960));
+  const [displayButton, setDisplayButton] = useState<boolean>(true);
 
   const handleClick = useCallback(() => {
     setMenu(prev => !prev);
@@ -23,6 +24,10 @@ function Navbar(): ReactElement {
     } else {
       setDisplayButton(true);
     }
+  }, [])
+
+  useEffect(() => {
+    showButton();
   }, [])
 
   window.addEventListener("resize", showButton);
@@ -53,20 +58,14 @@ function Navbar(): ReactElement {
   )
 }
 
-const links: Array<{url: string, name: string, element?: ReactElement | null}> = [
-  { url: '/', name: 'Home', element: null},
-  { url: '/about', name: 'About', element: null},
-  { url: '/products', name: 'Products', element: null},
-] as const;
-
 function NavMenu(
   { menuClosed, closeNavMenu } : { menuClosed: boolean, closeNavMenu: () => void }
 ): ReactElement {
   
   return (
     <ul className={menuClosed ? 'nav-menu' : 'nav-menu active'}>
-      {links.map(({ url, name, element}) => (
-        <li className="nav-item">
+      {PAGES.map(({ url, name }, index) => (
+        <li className="nav-item" key={index}>
           <Link to={url} className="nav-links" onClick={closeNavMenu}>
             {name}
           </Link>

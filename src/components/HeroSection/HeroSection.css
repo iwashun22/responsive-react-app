@@ -1,0 +1,91 @@
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.hero-container {
+  background: url("/images/beach.png") center center/cover no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0, 0.2);
+  object-fit: contain;
+}
+
+.hero-container h1 {
+  color: #fff;
+  font-size: 90px;
+  white-space: nowrap;
+  /* memo: this h1 is placed in flex but if you provide margin to negative you can place it higher */
+  margin-top: -100px;
+}
+.hero-container p {
+  color: #fff;
+  font-size: 30px;
+  margin: 8px;
+  font-weight: 200;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  width: 85vw;
+}
+
+.hero-btn {
+  flex: 1;
+  min-width: 200px;
+  max-width: 240px;
+  margin-top: 32px;
+  white-space: nowrap;
+  margin: 6px 6px;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .hero-container h1 {
+    font-size: 70px;
+    margin-top: -150px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .hero-container h1 {
+    font-size: 60px;
+    margin-top: -170px;
+  }
+  .hero-container p {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .hero-container h1 {
+    font-size: 40px;
+    margin-top: -170px;
+  }
+  .hero-container p {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .hero-container h1 {
+    text-align: center;
+    font-size: 60px;
+    white-space: wrap;
+  }
+}

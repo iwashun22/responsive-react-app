@@ -1,0 +1,15 @@
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  overflow: scroll;
+}
