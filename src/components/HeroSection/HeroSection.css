@@ -7,7 +7,6 @@ video {
 }
 
 .hero-container {
-  background: url("/images/beach.png") center center/cover no-repeat;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -16,6 +15,19 @@ video {
   align-items: center;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0, 0.2);
   object-fit: contain;
+  position: relative;
+}
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url("/images/beach.png") center center/cover no-repeat;
+  filter: brightness(0.7);
+  -webkit-filter: brightness(0.7);
+  z-index: -100;
 }
 
 .hero-container h1 {

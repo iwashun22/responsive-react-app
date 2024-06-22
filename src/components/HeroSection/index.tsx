@@ -5,6 +5,11 @@ import { FaAngleRight } from 'react-icons/fa';
 import '../../global/global.css';
 import './HeroSection.css';
 
+type STYLE = React.ButtonHTMLAttributes<HTMLButtonElement>["style"];
+const buttonStyle: STYLE = {
+  fontWeight: "600"
+}
+
 function HeroSection(): ReactElement {
   return (
     <div className="hero-container">
@@ -15,6 +20,7 @@ function HeroSection(): ReactElement {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
           className={["hero-btn"]}
+          style={buttonStyle}
         >
           {"Get Started".toUpperCase()}
         </Button>
@@ -22,6 +28,7 @@ function HeroSection(): ReactElement {
           buttonStyle="btn--primary"
           buttonSize="btn--large"
           className={["hero-btn"]}
+          style={buttonStyle}
         >
           {"Join us".toUpperCase()} 
           <FaAngleRight className='btn-icon'/>

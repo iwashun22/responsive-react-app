@@ -8,7 +8,8 @@ type BUTTON_STYLES = typeof STYLES[number];
 const SIZES = ['btn--medium', 'btn--large'] as const;
 type BUTTON_SIZES = typeof SIZES[number];
 
-function Button({ 
+function Button({
+  linkTo = "/",
   className = [],
   children = "button",
   type = undefined,
@@ -17,6 +18,7 @@ function Button({
   buttonStyle = 'btn--primary',
   buttonSize = 'btn--medium'
 }: PropsWithChildren<{
+  linkTo?: string;
   className?: Array<string>,
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"], 
   style?: ButtonHTMLAttributes<HTMLButtonElement>["style"],
@@ -26,7 +28,7 @@ function Button({
 }>): ReactElement {
   return (
     <>
-      <Link to="sign-up" className={className.join(" ")}>
+      <Link to={linkTo} className={className.join(" ")}>
         <button 
           className={`btn ${buttonStyle} ${buttonSize}`}
           onClick={onClick}

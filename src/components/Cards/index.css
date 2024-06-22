@@ -1,0 +1,32 @@
+.cards {
+  padding: 4rem;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto
+}
+
+.cards-wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.cards-items {
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards-items {
+    display: flex;
+  }
+}

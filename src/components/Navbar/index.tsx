@@ -81,6 +81,7 @@ function NavMenu(
             buttonSize="btn--large"
             buttonStyle="btn--outline"
             onClick={closeNavMenu}
+            linkTo='/sign-up'
             style={{
               width: "80%",
               display: "block",
