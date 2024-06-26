@@ -25,8 +25,9 @@ h1 {
   margin-bottom: 24px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cards-items {
     display: flex;
+    flex-wrap: wrap;
   }
 }

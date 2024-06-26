@@ -1,7 +1,8 @@
 .cards--item {
-  display: flex;
   flex: 1;
-  margin: 0 1rem;
+  min-width: 250px;
+  display: flex;
+  margin: 0 1rem 2rem;
   border-radius: 10px;
 }
 
@@ -26,6 +27,7 @@
 
 .cards--item--img--wrap::after {
   content: attr(data-category);
+  text-transform: capitalize;
   position: absolute;
   bottom: 0;
   margin-left: 10px;
@@ -64,5 +66,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  
+  .cards--item {
+    margin-bottom: 24px;
+  }
 }

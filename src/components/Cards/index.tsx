@@ -3,6 +3,32 @@ import CardItem from './CardItem';
 
 import './index.css';
 
+type CARD =  Parameters<typeof CardItem>[0];
+type OPTIONAL_CARD_TYPE<T extends keyof CARD> = {
+  [P in T]?: CARD[P]
+} &  Omit<CARD, T>;
+
+type CARD_LIST = Array<OPTIONAL_CARD_TYPE<"path" | "text" | "label">>;
+const cardList: CARD_LIST = [
+  {
+    src: "/images/chromatic-cat.png",
+    altText: "AI-generated Cat Image",
+  }, {
+    src: "/images/cosmic-car-race.png",
+    label: "sci-fi",
+  }, {
+    src: "/images/pop-art-radio.png",
+    label: "music",
+    text: "Color your life with variety of music!"
+  }, {
+    src: "/images/ghibli-starlight.png",
+    label: "anime",
+    text: "Enjoy touching stories with a lot of beautiful graphics and scenes."
+  }, {
+    src: ""
+  }
+];
+
 function Cards(): ReactElement {
   return (
     <div className="cards">
@@ -10,7 +36,18 @@ function Cards(): ReactElement {
       <div className="cards-container">
         <div className="cards-wrapper">
           <ul className="cards-items">
-            <CardItem src="/images/chromatic-cat.png"/>
+            {
+              cardList.map(({ src, altText, text, label, path }, index) => (
+                <CardItem 
+                  src={src}
+                  altText={altText}
+                  text={text ?? "Lorem ipsum dolor sit amet consectetur adipisicing elit."} 
+                  label={label ?? "Art"}
+                  path={path ?? "/"}
+                  key={index}
+                />
+              ))
+            }
           </ul>
         </div>
       </div>

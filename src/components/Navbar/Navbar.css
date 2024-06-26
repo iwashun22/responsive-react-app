@@ -134,3 +134,9 @@ ul.nav-menu {
     position: relative;
   }
 }
+
+@media screen and (max-width: 420px) {
+  ul.nav-menu {
+    width: 70vw;
+  }
+}

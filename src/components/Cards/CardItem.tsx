@@ -5,21 +5,23 @@ import './CardItem.css';
 
 function CardItem({
   src,
-  text = "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  label = "Art",
-  path = "/"
+  altText = "Image",
+  text,
+  label,
+  path
 }: {
   src: string,
-  text?: string,
-  label?: string,
-  path?: string,
+  altText?: string,
+  text: string,
+  label: string,
+  path: string,
 }): ReactElement {
   return (
     <>
       <li className="cards--item">
         <Link to={path} className="cards--item--link">
           <figure className="cards--item--img--wrap" data-category={label}>
-            <img src={src} alt="AI-generated Cat Image" className="cards--item--img" />
+            <img src={src} alt={altText} className="cards--item--img" />
           </figure>
           <div className="cards--item--info">
             <h5 className="cards--item--text">{text}</h5>
