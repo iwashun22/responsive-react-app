@@ -23,11 +23,19 @@ h1 {
 
 .cards-items {
   margin-bottom: 24px;
+  list-style: none;
 }
 
+@media screen and (min-width: 740px) {
+  .cards-items {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+  }
+}
 @media screen and (min-width: 1024px) {
   .cards-items {
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

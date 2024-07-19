@@ -1,0 +1,31 @@
+#about-page-main {
+  color: #fff;
+  font-size: 100px;
+  position: relative;
+}
+#about-page-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/images/fantasy-castle.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: brightness(.8);
+  filter: brightness(.8);
+  z-index: -10;
+}
+
+@media only screen and (max-width: 640px) {
+  #products-page-main {
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #products-page-main {
+    font-size: 50px;
+  }
+}

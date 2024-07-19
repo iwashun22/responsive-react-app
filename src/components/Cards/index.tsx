@@ -25,7 +25,7 @@ const cardList: CARD_LIST = [
     label: "anime",
     text: "Enjoy touching stories with a lot of beautiful graphics and scenes."
   }, {
-    src: ""
+    src: "/images/guy-watching-night-town.png"
   }
 ];
 

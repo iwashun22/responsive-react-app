@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import { LuAtom } from 'react-icons/lu';
 import { FaXmark } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-import PAGES from '../pages/pages';
+import PAGES, { PAGENAMES as P } from '../pages/pages';
 import Button from '../Button';
 
 import './Navbar.css';
@@ -36,7 +36,7 @@ function Navbar(): ReactElement {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeNavMenu}>
+          <Link to={PAGES[P.HOME].url} className="navbar-logo" onClick={closeNavMenu}>
             Fake Inc <LuAtom className="icon"/>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -50,6 +50,7 @@ function Navbar(): ReactElement {
             displayButton &&
             <Button
               buttonStyle="btn--outline"
+              linkTo={PAGES[P.SIGNUP].url}
             >Sign Up</Button>
           }
         </div>
@@ -64,24 +65,23 @@ function NavMenu(
   
   return (
     <ul className={menuClosed ? 'nav-menu' : 'nav-menu active'}>
-      {PAGES.map(({ url, name }, index) => (
-        <li className="nav-item" key={index}>
-          <Link to={url} className="nav-links" onClick={closeNavMenu}>
-            {name}
-          </Link>
-        </li>
-      ))}
+      {
+        Object.entries(PAGES)
+          .filter(([i, { name }]) => name !== PAGES[P.SIGNUP].name)
+          .map( ([ index, { url, name } ]) => (
+            <li className="nav-item" key={index}>
+              <Link to={url} className="nav-links" onClick={closeNavMenu}>
+                {name}
+              </Link>
+            </li>
+          ))
+      }
       <li className="nav-item menu-bar-only">
-        {/* <Link 
-          to="/sign-up" 
-          className="nav-links-mobile"
-          onClick={closeNavMenu}
-        > */}
           <Button
             buttonSize="btn--large"
             buttonStyle="btn--outline"
             onClick={closeNavMenu}
-            linkTo='/sign-up'
+            linkTo={PAGES[P.SIGNUP].url}
             style={{
               width: "80%",
               display: "block",

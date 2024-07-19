@@ -1,0 +1,7 @@
+.page-screen-main {
+  display: flex;
+  /* memo: the --navbar-height variable is configured in "../components/Navbar/Navbar.css" */
+  height: calc(100vh - var(--navbar-height));
+  align-items: center;
+  justify-content: center;
+}
