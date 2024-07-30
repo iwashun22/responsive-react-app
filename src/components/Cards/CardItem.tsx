@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { VALID_URL } from '../pages/pages';
 
 import './CardItem.css';
 
@@ -14,7 +15,7 @@ function CardItem({
   altText?: string,
   text: string,
   label: string,
-  path: string,
+  path: VALID_URL,
 }): ReactElement {
   return (
     <>

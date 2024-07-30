@@ -6,16 +6,18 @@ import './index.css';
 type CARD =  Parameters<typeof CardItem>[0];
 type OPTIONAL_CARD_TYPE<T extends keyof CARD> = {
   [P in T]?: CARD[P]
-} &  Omit<CARD, T>;
+} & Omit<CARD, T>;
 
 type CARD_LIST = Array<OPTIONAL_CARD_TYPE<"path" | "text" | "label">>;
 const cardList: CARD_LIST = [
   {
     src: "/images/chromatic-cat.png",
     altText: "AI-generated Cat Image",
+    path: "/products"
   }, {
     src: "/images/cosmic-car-race.png",
     label: "sci-fi",
+    path: "/products"
   }, {
     src: "/images/pop-art-radio.png",
     label: "music",
@@ -25,7 +27,8 @@ const cardList: CARD_LIST = [
     label: "anime",
     text: "Enjoy touching stories with a lot of beautiful graphics and scenes."
   }, {
-    src: "/images/guy-watching-night-town.png"
+    src: "/images/guy-watching-night-town.png",
+    path: "/about"
   }
 ];
 

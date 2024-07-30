@@ -11,7 +11,9 @@ export enum PAGENAMES {
   SIGNUP
 }
 
-const PAGES: Record<PAGENAMES, {url: string, name: string, Component?: (() => ReactElement) | undefined}> = {
+export type VALID_URL = "/" | "/about" | "/products" | "/sign-up";
+
+const PAGES: Record<PAGENAMES, {url: VALID_URL, name: string, Component?: (() => ReactElement) | undefined}> = {
   [PAGENAMES.HOME]: { 
     url: '/', 
     name: 'Home', 
@@ -32,6 +34,6 @@ const PAGES: Record<PAGENAMES, {url: string, name: string, Component?: (() => Re
     name: 'Sign Up',
     Component: SignUp
   }
- } as const;
+} as const;
 
 export default PAGES;
