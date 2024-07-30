@@ -67,7 +67,7 @@ function NavMenu(
     <ul className={menuClosed ? 'nav-menu' : 'nav-menu active'}>
       {
         Object.entries(PAGES)
-          .filter(([i, { name }]) => name !== PAGES[P.SIGNUP].name)
+          .filter(([_i, { name }]) => name !== PAGES[P.SIGNUP].name)
           .map( ([ index, { url, name } ]) => (
             <li className="nav-item" key={index}>
               <Link to={url} className="nav-links" onClick={closeNavMenu}>
