@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route 
-          path={PAGES[P.HOME].url} 
+          path="/"
           Component={PAGES[P.HOME].Component}
         />
         <Route 
