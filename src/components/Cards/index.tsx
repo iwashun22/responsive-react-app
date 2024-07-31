@@ -42,7 +42,7 @@ function Cards(): ReactElement {
             {
               cardList.map(({ src, altText, text, label, path }, index) => (
                 <CardItem 
-                  src={src}
+                  src={import.meta.env.VITE_ROOT_PATH + src}
                   altText={altText}
                   text={text ?? "Lorem ipsum dolor sit amet consectetur adipisicing elit."} 
                   label={label ?? "Art"}
