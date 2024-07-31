@@ -4,13 +4,15 @@ import PAGES, { PAGENAMES as P } from './components/pages/pages'
 
 import './global/global.css';
 
+const ROOT_PATH = "/responsive-react-app/";
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={ROOT_PATH}>
       <Navbar/>
       <Routes>
         <Route 
-          path="/"
+          path={PAGES[P.HOME].url}
           Component={PAGES[P.HOME].Component}
         />
         <Route 
