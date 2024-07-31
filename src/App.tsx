@@ -6,7 +6,7 @@ import './global/global.css';
 
 function App() {
   return (
-    <HashRouter basename={import.meta.env.VITE_ROOT_PATH}>
+    <HashRouter>
       <Navbar/>
       <Routes>
         <Route 
@@ -27,6 +27,7 @@ function App() {
         />
       </Routes>
     </HashRouter>
+    // <RouterProvider router={router}/>
   )
 }
 
