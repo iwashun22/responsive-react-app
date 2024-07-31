@@ -1,12 +1,12 @@
 import Navbar from './components/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import PAGES, { PAGENAMES as P } from './components/pages/pages'
 
 import './global/global.css';
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.VITE_ROOT_PATH}>
+    <HashRouter basename={import.meta.env.VITE_ROOT_PATH}>
       <Navbar/>
       <Routes>
         <Route 
@@ -26,7 +26,7 @@ function App() {
           Component={PAGES[P.SIGNUP].Component}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
