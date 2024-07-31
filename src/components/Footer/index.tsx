@@ -23,7 +23,7 @@ function Footer(): ReactElement {
               className="contact-input"
               type="email" 
               name="email" 
-              placeholder="Your Email"
+              placeholder="This is Fake"
             />
             <Button buttonStyle="btn--outline">send</Button>
           </form>
